@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import './App.css';
-import livro from './assets/img/livro.png';
 import { PlainButton, RoundedButton } from './components/Button';
-import StarRating from './components/StarRating';
+import RatingSection from './components/RatingSection';
 import { selectRating } from './features/ratingSlice';
 
 function App() {
@@ -16,11 +15,7 @@ function App() {
 
   return (
     <Main>
-      <RatingSection>
-        <img src={livro} alt='' />
-        <h1 className='cursive'>Como foi a ajuda do tutor?</h1>
-        <StarRating />
-      </RatingSection>
+      <RatingSection />
       <ActionButtons>
         <PlainButton>Pular</PlainButton>
         <RoundedButton disabled={untouched} onClick={printStars}>
@@ -38,20 +33,6 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-`;
-
-const RatingSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  gap: 20px;
-  padding: 10px 30px;
-
-  h1 {
-    text-align: center;
-  }
 `;
 
 const ActionButtons = styled.div`
