@@ -50,6 +50,11 @@ const ActionButtons = styled.div`
   justify-content: flex-end;
   padding: 20px;
   box-sizing: border-box;
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    padding-bottom: 40px;
+  }
 `;
 
 export default App;
