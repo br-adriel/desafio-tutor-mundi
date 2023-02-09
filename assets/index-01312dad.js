@@ -102,7 +102,7 @@ Error generating stack: `+i.message+`
     justify-content: center;
     padding-bottom: 40px;
   }
-`,zy="/assets/livro-9622d904.png",jy="/assets/estrela_cheia-a1c23573.svg",Iy="/assets/estrela_vazia-3a6ced1c.svg";function Ly({checked:e,...t}){return je(My,{...t,children:e?je("img",{src:jy,alt:"Estrela preenchida"}):je("img",{src:Iy,alt:"Estrela não preenchida"})})}const My=an.button`
+`,zy="/desafio-tutor-mundi/assets/livro-9622d904.png",jy="/desafio-tutor-mundi/assets/estrela_cheia-a1c23573.svg",Iy="/desafio-tutor-mundi/assets/estrela_vazia-3a6ced1c.svg";function Ly({checked:e,...t}){return je(My,{...t,children:e?je("img",{src:jy,alt:"Estrela preenchida"}):je("img",{src:Iy,alt:"Estrela não preenchida"})})}const My=an.button`
   background: transparent;
   border: none;
   display: flex;
