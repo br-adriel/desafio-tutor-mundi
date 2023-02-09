@@ -23,6 +23,7 @@ const Button = styled.button`
   background: transparent;
   border: none;
   display: flex;
+  cursor: pointer;
 
   img {
     width: 30px;
