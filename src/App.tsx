@@ -7,7 +7,13 @@ import StarRating from './components/StarRating';
 import { selectRating } from './features/ratingSlice';
 
 function App() {
-  const { untouched } = useSelector(selectRating);
+  const { untouched, starsStatus } = useSelector(selectRating);
+
+  const printStars = () => {
+    const stars = starsStatus.reduce((a, b) => a + b, 0);
+    console.log(stars);
+  };
+
   return (
     <Main>
       <RatingSection>
@@ -17,7 +23,9 @@ function App() {
       </RatingSection>
       <ActionButtons>
         <PlainButton>Pular</PlainButton>
-        <RoundedButton disabled={untouched}>Confirmar</RoundedButton>
+        <RoundedButton disabled={untouched} onClick={printStars}>
+          Confirmar
+        </RoundedButton>
       </ActionButtons>
     </Main>
   );
