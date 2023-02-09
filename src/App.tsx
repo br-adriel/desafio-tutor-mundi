@@ -1,11 +1,13 @@
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import './App.css';
 import livro from './assets/img/livro.png';
 import { PlainButton, RoundedButton } from './components/Button';
 import StarRating from './components/StarRating';
-import './reset.css';
-import './App.css';
+import { selectRating } from './features/ratingSlice';
 
 function App() {
+  const { untouched } = useSelector(selectRating);
   return (
     <Main>
       <RatingSection>
@@ -15,7 +17,7 @@ function App() {
       </RatingSection>
       <ActionButtons>
         <PlainButton>Pular</PlainButton>
-        <RoundedButton>Confirmar</RoundedButton>
+        <RoundedButton disabled={untouched}>Confirmar</RoundedButton>
       </ActionButtons>
     </Main>
   );

@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { rate, selectRating } from '../features/ratingSlice';
 import StarButton from './StarButton';
 
 function StarRating() {
-  const [starsStatus, setStarsStatus] = useState([0, 0, 0, 0, 0]);
+  const { starsStatus } = useSelector(selectRating);
+  const dispatch = useDispatch();
 
   const clickStar = (index: number) => {
     if (index >= 0 && index < starsStatus.length) {
@@ -12,7 +14,7 @@ function StarRating() {
         if (i <= index) newStarsStatus.push(1);
         else newStarsStatus.push(0);
       }
-      setStarsStatus(newStarsStatus);
+      dispatch(rate(newStarsStatus));
     }
   };
 
